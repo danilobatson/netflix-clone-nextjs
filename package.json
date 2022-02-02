@@ -1,16 +1,16 @@
 {
   "name": "netflix-twin",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+},
   "dependencies": {
-    "next": "12.0.9",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "next": "^12.0.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "eslint": "8.7.0",

@@ -17,10 +17,17 @@ export const Banner = ({ imgUrl, title, subtitle }) => {
           </div>
 
           <h3 className={styles.title}>{title}</h3>
+          <br/>
           <h5 className={styles.subtitle}>{subtitle}</h5>
 
           <div className={styles.playBtnWrapper}>
             <button onClick={handleOnPlay} className={styles.btnWithIcon}>
+              <Image
+                src='/static/play_arrow.svg'
+                width='32px'
+                height='32px'
+                alt='Play Arrow'
+              />
               <span className={styles.playText}>Play Button</span></button>
           </div>
 
