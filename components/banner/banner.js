@@ -28,7 +28,7 @@ export const Banner = ({ imgUrl, title, subtitle }) => {
                 height='32px'
                 alt='Play Arrow'
               />
-              <span className={styles.playText}>Play Button</span></button>
+              <span className={styles.playText}>Play</span></button>
           </div>
 
         </div>

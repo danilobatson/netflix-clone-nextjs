@@ -6,7 +6,8 @@ import Link from "next/link";
 
 
 export const NavBar = ({ username }) => {
-    const router = useRouter()
+  const [showDropdown, setShowDropdown] = useState(false)
+  const router = useRouter()
 
   const handleOnClickHome = (e) => {
     e.preventDefault();
@@ -21,6 +22,11 @@ export const NavBar = ({ username }) => {
   const handleSignout = (e) => {
     e.preventDefault();
     router.push("/login")
+  }
+
+  const handleShowDropDown = (e) => {
+    e.preventDefault()
+    setShowDropdown(!showDropdown)
   }
   return (
 
@@ -38,9 +44,10 @@ export const NavBar = ({ username }) => {
           <li className={styles.navItem2} onClick={handleOnClickMyList}>
             My List</li>
         </ul>
+
         <nav className={styles.navContainer}>
           <div>
-            <button className={styles.usernameBtn}>
+            <button className={styles.usernameBtn} onClick={handleShowDropDown}>
               <p className={styles.username}>{username}</p>
               {/* Expand more icon */}
               {/* <Image
@@ -50,15 +57,19 @@ export const NavBar = ({ username }) => {
                 height="24px"
               /> */}
             </button>
-            <div className={styles.navDropdown}>
-              <div>
-                <Link href="/login">
-                  <a className={styles.linkName} onClick="/login">Sign Out</a>
-                </Link>
-                <div className={styles.lineWrapper}>
+
+            {showDropdown && (<>
+              <div className={styles.navDropdown}>
+                <div>
+                  <Link href="/login">
+                    <a className={styles.linkName} onClick="/login">Sign Out</a>
+                  </Link>
+                  <div className={styles.lineWrapper}>
+                  </div>
                 </div>
               </div>
-            </div>
+            </>)}
+
           </div>
         </nav>
       </div>
