@@ -34,7 +34,12 @@ export const NavBar = ({ username }) => {
       <div className={styles.wrapper}>
         <a className={styles.logoLink} href="/">
           <div className={styles.logoWrapper}>
-            Netflix
+            <Image
+              src="/static/netflix.svg"
+              alt="Netflix logo"
+              width="128px"
+              height="34px"
+            />
           </div>
         </a>
 
@@ -50,12 +55,12 @@ export const NavBar = ({ username }) => {
             <button className={styles.usernameBtn} onClick={handleShowDropDown}>
               <p className={styles.username}>{username}</p>
               {/* Expand more icon */}
-              {/* <Image
+              <Image
                 src={"/static/expand_more.svg"}
                 alt="Expand dropdown"
                 width="24px"
                 height="24px"
-              /> */}
+              />
             </button>
 
             {showDropdown && (<>
