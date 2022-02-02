@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 import styles from "./card.module.css";
 
-export const Card = ({ imgUrl, size = 'medium'}) => {
+export const Card = ({ imgUrl, shouldScale = true, id, size = 'medium'}) => {
 
   const [imgSrc, setImgSrc] = useState(imgUrl)
 
@@ -24,9 +24,9 @@ export const Card = ({ imgUrl, size = 'medium'}) => {
 
   const scale = id === 0 ? {scaleY: 1.1} : {scale: 1.1}
 
-  const shouldHover = shouldScale && {
-    whileHover: {...scale}
-  }
+   const shouldHover = shouldScale && {
+     whileHover: {...scale}
+   }
 
   return (
     <div className={styles.container}>
