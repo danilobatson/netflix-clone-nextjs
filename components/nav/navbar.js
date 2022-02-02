@@ -1,8 +1,27 @@
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
+
 
 export const NavBar = ({ username }) => {
+    const router = useRouter()
+
+  const handleOnClickHome = (e) => {
+    e.preventDefault();
+    router.push("/")
+  }
+
+  const handleOnClickMyList = (e) => {
+    e.preventDefault();
+    router.push("/browse/my-list")
+  }
+
+  const handleSignout = (e) => {
+    e.preventDefault();
+    router.push("/login")
+  }
   return (
 
     <div className={styles.container}>
@@ -14,8 +33,10 @@ export const NavBar = ({ username }) => {
         </a>
 
         <ul className={styles.navItems}>
-          <li className={styles.navItem}>Home</li>
-          <li className={styles.navItem2}> My List</li>
+          <li className={styles.navItem} onClick={handleOnClickHome}>
+            Home</li>
+          <li className={styles.navItem2} onClick={handleOnClickMyList}>
+            My List</li>
         </ul>
         <nav className={styles.navContainer}>
           <div>
@@ -31,7 +52,9 @@ export const NavBar = ({ username }) => {
             </button>
             <div className={styles.navDropdown}>
               <div>
-                <a className={styles.linkName} href="">Sign Out</a>
+                <Link href="/login">
+                  <a className={styles.linkName} onClick="/login">Sign Out</a>
+                </Link>
                 <div className={styles.lineWrapper}>
                 </div>
               </div>
