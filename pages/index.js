@@ -35,7 +35,7 @@ export default function Home({ disneyVideos,
         <meta name="Netflix" content="Netflix" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+<div className={styles.main}>
       <NavBar username='djbatson19@gmail.com' />
       <Banner title='Clifford The Big Red Dog' subtitle='The Motion Picture' imgUrl='/static/clifford.webp' />
 
@@ -49,7 +49,7 @@ export default function Home({ disneyVideos,
         />
         <SectionCard title="Popular" videos={popularVideos} size="small" />
       </div>
-
+      </div>
     </div>
   )
 }
