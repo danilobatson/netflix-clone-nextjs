@@ -1,39 +1,38 @@
-import Image from "next/image"
+import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "./banner.module.css";
 
-export const Banner = ({ imgUrl, title, subtitle }) => {
-  const handleOnPlay = () => (
-    alert('Handle On Play ')
-  )
+const Banner = (props) => {
+  const { title, subTitle, imgUrl, videoId } = props;
+  const router = useRouter();
+
+  const handleOnPlay = () => {
+    router.push(`video/${videoId}`);
+  };
   return (
     <div className={styles.container}>
-
       <div className={styles.leftWrapper}>
         <div className={styles.left}>
-
           <div className={styles.nseriesWrapper}>
             <p className={styles.firstLetter}>N</p>
             <p className={styles.series}>S E R I E S</p>
           </div>
-
           <h3 className={styles.title}>{title}</h3>
-          <br/>
-          <h5 className={styles.subtitle}>{subtitle}</h5>
+          <h3 className={styles.subTitle}>{subTitle}</h3>
 
           <div className={styles.playBtnWrapper}>
-            <button onClick={handleOnPlay} className={styles.btnWithIcon}>
+            <button className={styles.btnWithIcon} onClick={handleOnPlay}>
               <Image
-                src='/static/play_arrow.svg'
-                width='32px'
-                height='32px'
-                alt='Play Arrow'
+                src="/static/play_arrow.svg"
+                alt="Play icon"
+                width="32px"
+                height="32px"
               />
-              <span className={styles.playText}>Play</span></button>
+              <span className={styles.playText}>Play</span>
+            </button>
           </div>
-
         </div>
       </div>
-
       <div
         className={styles.bannerImg}
         style={{
@@ -41,5 +40,7 @@ export const Banner = ({ imgUrl, title, subtitle }) => {
         }}
       ></div>
     </div>
-  )
-}
+  );
+};
+
+export default Banner;

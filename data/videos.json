@@ -1,4 +1,12 @@
 {
+  "kind": "youtube#searchListResponse",
+  "etag": "I9GD9V5wCaKbHg6QgPQzHnblZtk",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "CA",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
   "items": [
     {
       "kind": "youtube#searchResult",
